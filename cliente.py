@@ -42,7 +42,7 @@ print ("Recebi do servidor:", msg.decode('ascii'))
 
 # Manda o pedido
 for i in pedido:
-    time.sleep(1)
+    #time.sleep(1)
     msg = i + "\n"
     s.send(msg.encode('ascii'))
 
