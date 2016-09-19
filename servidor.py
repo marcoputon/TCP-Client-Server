@@ -6,16 +6,13 @@ from functions import *
 # Cria o socket
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# Pega o nome de host
-host = socket.gethostname()
-print("host:", host)
-
 # Define a porta a ser usada
-port = 9999
-print("porta:", port)
+port = 0
 
 # Faz bind
-serversocket.bind((host, port))
+serversocket.bind(('', port))
+print("host:", socket.gethostname())
+print("porta:", serversocket.getsockname()[1])
 
 # Define maximo de conexões simunltâneas no socket (não tenho certeza)
 serversocket.listen(5)
